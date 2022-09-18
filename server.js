@@ -33,7 +33,17 @@ app.get('/api/notes/:id', (req, res) => {
     
 });
   
+app.post('/api/notes', (req, res) => {
+    let dbNotes = JSON.parse(fs.readFileSync('./db/db.json','utf-8'))
+    let note = req.body;
+    let id = dbNotes.length.toString();
+    note.id = id;
+    dbNotes.push(note);
 
+    fs.writeFileSync('./db/db.json', JSON.stringify(dbNotes));
+    res.json(dbNotes);
+    
+});
 // GET Route for feedback page
 app.get('/feedback', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
@@ -42,4 +52,3 @@ app.get('/feedback', (req, res) =>
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
-//
