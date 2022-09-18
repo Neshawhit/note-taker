@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+require('dotenv').config()
+
 //const { clog } = require('./middleware/clog');
 //const api = require('./routes/index.js');
 
