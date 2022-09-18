@@ -6,7 +6,7 @@ require('dotenv').config()
 //const { clog } = require('./middleware/clog');
 //const api = require('./routes/index.js');
 
-const PORT = process.env.port || 3001;
+const PORT = process.env.port || 12999;
 
 const app = express();
 
@@ -47,9 +47,9 @@ app.post('/api/notes', (req, res) => {
     
 });
 // GET Route for feedback page
-app.get('/feedback', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
-);
+// app.get('/feedback', (req, res) =>
+//   res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
+// );
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
