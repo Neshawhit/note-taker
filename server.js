@@ -6,7 +6,7 @@ require('dotenv').config()
 //const { clog } = require('./middleware/clog');
 //const api = require('./routes/index.js');
 
-const PORT = process.env.port || 12999;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
